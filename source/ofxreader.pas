@@ -1,7 +1,7 @@
 
 //
 // OFX - Open Financial Exchange
-// OFX - Open Financial Connectivity
+// OFC - Open Financial Connectivity
 
 // 2006 - Eduardo Bento da Rocha (YoungArts)
 // 2016 - Leonardo Gregianin - github.com/leogregianin
@@ -240,7 +240,7 @@ end;
 
 procedure Register;
 begin
-  RegisterComponents('OFXreader', [TOFXReader]);
+  RegisterComponents('OFXReader', [TOFXReader]);
 end;
 
 end.
