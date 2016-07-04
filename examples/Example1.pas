@@ -35,7 +35,11 @@ begin
       OFXReader1 := TOFXReader.Create(nil);
 
       OFXReader1.OFXFile := Path.Text;
-      OFXReader1.Import;
+      try
+         OFXReader1.Import;
+      except on E: Exception do
+         raise Exception.Create('Error Message: ' + E.Message);
+      end;
 
       Memo1.Clear;
       Memo1.Lines.Add('Bank: ' + OFXReader1.BankID);

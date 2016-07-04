@@ -143,9 +143,14 @@ begin
           sLine := oFile.Strings[i];
 
           if FindString('<TRNTYPE>', sLine) then
-             if InfLine(sLine) = '0' then oItem.MovType := 'C'
-             else if InfLine(sLine) = '1' then oItem.MovType := 'D'
+          begin
+             if (InfLine(sLine) = '0') or (InfLine(sLine) = 'CREDIT') then
+                oItem.MovType := 'C'
+             else
+             if (InfLine(sLine) = '1') or (InfLine(sLine) = 'DEBIT') then
+                oItem.MovType := 'D'
              else oItem.MovType := 'OTHER';
+          end;
 
           if FindString('<DTPOSTED>', sLine) then
              oItem.MovDate := EncodeDate(StrToIntDef(copy(InfLine(sLine),1,4), 0),
@@ -212,7 +217,10 @@ begin
   begin
     sLine := Trim(sLine);
     iTemp := Pos('>', sLine);
-    Result := copy(sLine, iTemp+1, pos('</', sLine)-iTemp-1)
+    if pos('</', sLine) > 0 then
+       Result := copy(sLine, iTemp+1, pos('</', sLine)-iTemp-1)
+    else
+       Result := copy(sLine, iTemp+1, iTemp-1);
   end;
 end;
 
