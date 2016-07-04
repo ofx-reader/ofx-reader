@@ -20,7 +20,7 @@ object FormExample1: TFormExample1
     Top = 13
     Width = 137
     Height = 41
-    Caption = 'Reader OFC file'
+    Caption = 'Reader OFX/OFC file'
     TabOrder = 0
     OnClick = ButtonReaderClick
   end
@@ -41,6 +41,6 @@ object FormExample1: TFormExample1
     EditLabel.Height = 13
     EditLabel.Caption = 'Path'
     TabOrder = 2
-    Text = 'extrato.ofc'
+    Text = 'extrato.ofx'
   end
 end

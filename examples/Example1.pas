@@ -25,22 +25,22 @@ implementation
 
 {$R *.dfm}
 
-uses ofcreader;
+uses ofxreader;
 
 procedure TFormExample1.ButtonReaderClick(Sender: TObject);
-var OFCReader1: TOFCReader;
+var OFXReader1: TOFXReader;
     i: Integer;
 begin
    try
-      OFCReader1 := TOFCReader.Create(nil);
+      OFXReader1 := TOFXReader.Create(nil);
 
-      OFCReader1.OFCFile := Path.Text;
-      OFCReader1.Import;
+      OFXReader1.OFXFile := Path.Text;
+      OFXReader1.Import;
 
       Memo1.Clear;
-      Memo1.Lines.Add('Bank: ' + OFCReader1.BankID);
-      Memo1.Lines.Add('Branch: ' + OFCReader1.BranchID);
-      Memo1.Lines.Add('Account: ' + OFCReader1.AccountID);
+      Memo1.Lines.Add('Bank: ' + OFXReader1.BankID);
+      Memo1.Lines.Add('Branch: ' + OFXReader1.BranchID);
+      Memo1.Lines.Add('Account: ' + OFXReader1.AccountID);
       Memo1.Lines.Add('----------------');
       Memo1.Lines.Add('# | '+
                       'Transaction identify | ' +
@@ -51,22 +51,22 @@ begin
                       'Description ');
       Memo1.Lines.Add('----------------');
 
-      for i := 0 to OFCReader1.Count-1 do
+      for i := 0 to OFXReader1.Count-1 do
       begin
         Memo1.Lines.Add(IntToStr(i) + ' ' +
-                        OFCReader1.Get(i).ID + ' ' +
-                        OFCReader1.Get(i).Document + ' ' +
-                        DateToStr(OFCReader1.Get(i).MovDate) + ' ' +
-                        OFCReader1.Get(i).MovType + ' ' +
-                        OFCReader1.Get(i).Value + ' ' +
-                        OFCReader1.Get(i).Description);
+                        OFXReader1.Get(i).ID + ' ' +
+                        OFXReader1.Get(i).Document + ' ' +
+                        DateToStr(OFXReader1.Get(i).MovDate) + ' ' +
+                        OFXReader1.Get(i).MovType + ' ' +
+                        OFXReader1.Get(i).Value + ' ' +
+                        OFXReader1.Get(i).Description);
       end;
 
       Memo1.Lines.Add('----------------');
-      Memo1.Lines.Add('Final balance: ' + OFCReader1.FinalBalance);
+      Memo1.Lines.Add('Final balance: ' + OFXReader1.FinalBalance);
 
    finally
-      FreeAndNil(OFCReader1);
+      FreeAndNil(OFXReader1);
    end;
 end;
 
