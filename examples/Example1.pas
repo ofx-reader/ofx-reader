@@ -42,6 +42,14 @@ begin
       Memo1.Lines.Add('Branch: ' + OFCReader1.BranchID);
       Memo1.Lines.Add('Account: ' + OFCReader1.AccountID);
       Memo1.Lines.Add('----------------');
+      Memo1.Lines.Add('# | '+
+                      'Transaction identify | ' +
+                      'Document | ' +
+                      'Date | ' +
+                      'Type | '+
+                      'Value | '+
+                      'Description ');
+      Memo1.Lines.Add('----------------');
 
       for i := 0 to OFCReader1.Count-1 do
       begin

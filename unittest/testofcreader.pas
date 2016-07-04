@@ -80,9 +80,11 @@ begin
   begin
      case i of
       0: begin
-        CheckEquals('01/06/2016', DateToStr(FOFCReader.Get(i).MovDate));
         CheckEquals('D', FOFCReader.Get(i).MovType);
+        CheckEquals('01/06/2016', DateToStr(FOFCReader.Get(i).MovDate));
         CheckEquals('-10.00', FOFCReader.Get(i).Value);
+        CheckEquals('2016060111650', FOFCReader.Get(i).ID);
+        CheckEquals('91100701', FOFCReader.Get(i).Document);
         CheckEquals('Cobrança de I.O.F.', FOFCReader.Get(i).Description);
       end;
      end;
@@ -96,9 +98,11 @@ begin
   begin
      case i of
       1: begin
-        CheckEquals('02/06/2016', DateToStr(FOFCReader.Get(i).MovDate));
         CheckEquals('C', FOFCReader.Get(i).MovType);
+        CheckEquals('02/06/2016', DateToStr(FOFCReader.Get(i).MovDate));
         CheckEquals('880.00', FOFCReader.Get(i).Value);
+        CheckEquals('2016060202176000', FOFCReader.Get(i).ID);
+        CheckEquals('00121482', FOFCReader.Get(i).Document);
         CheckEquals('Recebimento de Proventos', FOFCReader.Get(i).Description);
       end;
      end;
@@ -112,9 +116,11 @@ begin
   begin
      case i of
       4: begin
-        CheckEquals('03/06/2016', DateToStr(FOFCReader.Get(i).MovDate));
         CheckEquals('D', FOFCReader.Get(i).MovType);
+        CheckEquals('03/06/2016', DateToStr(FOFCReader.Get(i).MovDate));
         CheckEquals('-200.00', FOFCReader.Get(i).Value);
+        CheckEquals('20160603149980', FOFCReader.Get(i).ID);
+        CheckEquals('00141658', FOFCReader.Get(i).Document);
         CheckEquals('Compra com Cartão - 03/06 11:34 LOJAS X', FOFCReader.Get(i).Description);
       end;
      end;
