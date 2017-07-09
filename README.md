@@ -8,18 +8,18 @@ About
 
    * OFX/OFC file format is widely used in Internet Banking of the leading financial institutions in the world.
 
-   * Compatible with all versions of Delphi / Lazarus.
+   * Compatible with all versions of Delphi / Lazarus. Tested with free [https://www.embarcadero.com/products/delphi/starter/promotional-download](Delphi Starter Edition)
   
 Example
 -------
 
-![example](examples/output/ofcreader-example.png)
+![example](examples/ofcreader-example.png)
 
 
 Unittest
 -------
 
-![dunit](unittest/output/dunit.png)
+![dunit](unittest/dunit.png)
 
 License
 -------

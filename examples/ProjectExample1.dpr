@@ -3,7 +3,7 @@ program ProjectExample1;
 uses
   Vcl.Forms,
   Example1 in 'Example1.pas' {FormExample1},
-  ofxreader in '..\source\ofxreader.pas';
+  ofxreader in '..\lib\ofxreader.pas';
 
 {$R *.res}
 
