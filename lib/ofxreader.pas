@@ -70,8 +70,6 @@ begin
 end;
 
 procedure TOFXReader.Clear;
-var
-  i: integer;
 begin
   while FListItems.Count > 0 do
     Delete(0);
@@ -96,7 +94,6 @@ var
   oItem : TOFXItem;
   sLine : string;
 begin
-  Result := false;
   Clear;
   bOFX := false;
   if not FileExists(FOFXFile) then
