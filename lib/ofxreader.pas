@@ -15,7 +15,7 @@ uses classes, SysUtils;
 type
   TOFXItem = class
     MovType : String;
-    MovDate : TDate;
+    MovDate : TDateTime;
     Value : String;
     ID : string;
     Document : string;
