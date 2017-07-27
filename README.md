@@ -1,5 +1,5 @@
 # OFX/OFC Reader
-Read the OFX (Open Financial Exchange) and OFC (Open Financial Connectivity) file formats
+Read the OFX (Open Financial Exchange) and OFC (Open Financial Connectivity) file formats.
 
 About
 -------
@@ -22,6 +22,12 @@ Unittest
 -------
 
 ![dunit](unittest/dunit.png)
+
+
+Colaboration
+-------
+Contribute to improve the project. If you'd like inspiration on projects to take on, check out the [Easy-Fix](https://github.com/leogregianin/ofx-reader/issues) label on the tracker. It holds tasks that can be solved without too much prior knowledge of the code.
+
 
 License
 -------
