@@ -16,7 +16,7 @@ Example
 -------
 
 ![example1](samples/simple.jpg)
-![example2](samples/cds.jpg)
+![example2](samples/dataset.jpg)
 
 
 Unittest
