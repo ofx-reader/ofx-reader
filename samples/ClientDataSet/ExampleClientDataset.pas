@@ -1,4 +1,4 @@
-unit Example2;
+unit ExampleClientDataset;
 
 interface
 
@@ -40,7 +40,7 @@ begin
   try
     tmpReader.OFXFile := ExpandFileName(Path.Text);
     if not (tmpReader.Import) then
-      raise Exception.Create(Format('O arquivo %s não parece ser um OFX válido!', [tmpReader.OFXFile]));
+      raise Exception.Create(Format('Import file %s with errors!', [tmpReader.OFXFile]));
 
     for i := 0 to tmpReader.Count - 1 do
       ClientDataSet1.InsertRecord([

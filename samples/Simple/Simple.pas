@@ -1,4 +1,4 @@
-unit Example1;
+unit Simple;
 
 interface
 

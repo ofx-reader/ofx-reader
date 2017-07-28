@@ -3,7 +3,7 @@ object FormExample1: TFormExample1
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'FormExample1'
+  Caption = 'FormSimple'
   ClientHeight = 341
   ClientWidth = 901
   Color = clBtnFace
@@ -41,6 +41,6 @@ object FormExample1: TFormExample1
     EditLabel.Height = 13
     EditLabel.Caption = 'Path'
     TabOrder = 2
-    Text = '..\ofx-files\BancodoBrasil.ofx'
+    Text = '..\..\ofx-files\BancodoBrasil.ofx'
   end
 end

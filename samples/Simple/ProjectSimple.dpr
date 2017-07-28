@@ -1,9 +1,9 @@
-program ProjectExample1;
+program ProjectSimple;
 
 uses
   Vcl.Forms,
-  Example1 in 'Example1.pas' {FormExample1},
-  ofxreader in '..\lib\ofxreader.pas';
+  Simple in 'Simple.pas' {FormExample1},
+  ofxreader in '..\..\source\ofxreader.pas';
 
 {$R *.res}
 

@@ -1,9 +1,9 @@
-program ProjectExample2;
+program ProjectExampleCDS;
 
 uses
   Vcl.Forms,
-  Example2 in 'Example2.pas' {Form1},
-  ofxreader in '..\lib\ofxreader.pas';
+  ExampleClientDataset in 'ExampleClientDataset.pas' {Form1},
+  ofxreader in '..\..\source\ofxreader.pas';
 
 {$R *.res}
 
