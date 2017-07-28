@@ -15,8 +15,18 @@ About
 Example
 -------
 
+Simple result:
+
 ![example1](samples/simple.jpg)
+
+
+Dataset result:
+
 ![example2](samples/dataset.jpg)
+
+
+JSON result:
+
 ![example3](samples/json.jpg)
 
 
