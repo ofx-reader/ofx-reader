@@ -15,7 +15,8 @@ About
 Example
 -------
 
-![example](examples/ofcreader-example.png)
+![example1](samples/simple.jpg)
+![example2](samples/cds.jpg)
 
 
 Unittest
