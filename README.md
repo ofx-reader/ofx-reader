@@ -10,7 +10,7 @@ About
 
    * Compatible with all versions of Delphi / Lazarus. 
    
-   * Tested with free [Delphi](https://www.embarcadero.com/products/delphi/starter/promotional-download) Starter Edition.
+   * Tested with free [Delphi Starter Edition](https://www.embarcadero.com/products/delphi/starter/promotional-download) and [Lazarus FPC IDE](https://www.lazarus-ide.org).
  
 Example
 -------
@@ -33,7 +33,7 @@ JSON result:
 Unittest
 -------
 
-![dunit](unittest/dunit.png)
+![dunit](tests/Delphi/dunit.png)
 
 
 Colaboration
