@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="10"/>
+    <BuildModes Active="Default"/>
+    <Units Count="3">
+      <Unit0>
+        <Filename Value="fpcunitproject1.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="3"/>
+        <CursorPos X="18" Y="20"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="testcase1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="TestCase1"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="123"/>
+        <CursorPos X="57" Y="147"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="..\..\source\ofxreader.pas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit2>
+    </Units>
+    <JumpHistory Count="6" HistoryIndex="5">
+      <Position1>
+        <Filename Value="testcase1.pas"/>
+        <Caret Line="32" Column="5" TopLine="15"/>
+      </Position1>
+      <Position2>
+        <Filename Value="testcase1.pas"/>
+        <Caret Line="14" Column="17"/>
+      </Position2>
+      <Position3>
+        <Filename Value="testcase1.pas"/>
+        <Caret Line="122" Column="10" TopLine="103"/>
+      </Position3>
+      <Position4>
+        <Filename Value="testcase1.pas"/>
+        <Caret Line="138" Column="16" TopLine="121"/>
+      </Position4>
+      <Position5>
+        <Filename Value="testcase1.pas"/>
+        <Caret Line="19" Column="14" TopLine="7"/>
+      </Position5>
+      <Position6>
+        <Filename Value="testcase1.pas"/>
+        <Caret Line="28" TopLine="14"/>
+      </Position6>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>
