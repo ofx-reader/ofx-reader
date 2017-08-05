@@ -30,6 +30,7 @@
 *.dll
 *.bpl
 *.bpi
+*.ppu
 *.dcp
 *.so
 *.apk
