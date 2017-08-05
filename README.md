@@ -33,7 +33,7 @@ JSON result:
 Unittest
 -------
 
-![dunit](tests/Delphi/dunit.png)
+![dunit](tests/tests.png)
 
 
 Colaboration
