@@ -6,7 +6,7 @@ uses
   Classes,
   consoletestrunner,
   TestCase1,
-  ofxreader in '..\..\source\ofxreader.pas';
+  ofxreader in '..\..\src\ofxreader.pas';
 
 type
 

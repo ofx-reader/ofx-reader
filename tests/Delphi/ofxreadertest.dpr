@@ -7,7 +7,7 @@ program ofxreadertest;
 uses
   DUnitTestRunner,
   testofxreader in 'testofxreader.pas',
-  ofxreader in '..\lib\ofxreader.pas';
+  ofxreader in '..\..\src\ofxreader.pas';
 
 {$R *.RES}
 
