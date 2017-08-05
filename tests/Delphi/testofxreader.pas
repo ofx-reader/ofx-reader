@@ -54,7 +54,7 @@ var
   ReturnValue: Boolean;
 begin
   FOFXReader := TOFXReader.Create(nil);
-  FOFXReader.ofxFile := '..\ofx-files\extrato.ofx';
+  FOFXReader.ofxFile := '..\..\ofx-files\extrato.ofx';
   ReturnValue := FOFXReader.Import;
   CheckTrue(ReturnValue);
 end;
