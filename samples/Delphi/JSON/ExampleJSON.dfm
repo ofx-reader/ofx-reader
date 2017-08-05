@@ -41,6 +41,6 @@ object FormExample1: TFormExample1
     EditLabel.Height = 13
     EditLabel.Caption = 'Path'
     TabOrder = 2
-    Text = '..\..\ofx-files\BancodoBrasil.ofx'
+    Text = '..\..\..\ofx-files\BancodoBrasil.ofx'
   end
 end

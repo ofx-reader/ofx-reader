@@ -3,7 +3,7 @@ program ProjectJSON;
 uses
   Vcl.Forms,
   ExampleJSON in 'ExampleJSON.pas' {FormExample1},
-  ofxreader in '..\..\source\ofxreader.pas';
+  ofxreader in '..\..\..\src\ofxreader.pas';
 
 {$R *.res}
 

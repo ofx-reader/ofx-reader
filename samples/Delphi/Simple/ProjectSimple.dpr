@@ -3,7 +3,7 @@ program ProjectSimple;
 uses
   Vcl.Forms,
   Simple in 'Simple.pas' {FormExample1},
-  ofxreader in '..\..\source\ofxreader.pas';
+  ofxreader in '..\..\..\src\ofxreader.pas';
 
 {$R *.res}
 

@@ -3,7 +3,7 @@ program ProjectExampleCDS;
 uses
   Vcl.Forms,
   ExampleClientDataset in 'ExampleClientDataset.pas' {Form1},
-  ofxreader in '..\..\source\ofxreader.pas';
+  ofxreader in '..\..\..\src\ofxreader.pas';
 
 {$R *.res}
 
