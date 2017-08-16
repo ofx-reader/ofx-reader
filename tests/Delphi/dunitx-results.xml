@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<test-results name="C:\Users\leo\Documents\ofx-reader\tests\Delphi\ofxreadertest.exe" total="18" errors="0" failures="0" ignored="0" inconclusive="0" not-run="0" skipped="0" invalid="0" date="2017-08-16" time="0.024">
+  <culture-info current-culture="en" current-uiculture="en" />
+  <test-suite type="Assembly" name="ofxreadertest.exe" executed="true" result="Success" success="True" time="0.024" asserts="0">
+    <results>
+        <test-suite type="Namespace" name="testofxreader" executed="true" result="Success" success="True" time="0.024" asserts="0" >
+          <results>
+              <test-suite type="Fixture" name="TestTOFCReader" executed="True" result="Success" success="True" time="0.024" >
+                <results>
+                  <test-case name="TestImport" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="TestBank" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="TestBranch" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="TestAccount" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="TestAccountType" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="TestFinalBalance" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="TestMov0" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="TestMov1" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="TestMov4" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+          </results>
+        </test-suite>
+        <test-suite type="Fixture" name="TestTOFXReader" executed="True" result="Success" success="True" time="0.014" >
+          <results>
+            <test-case name="TestImport" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+            <test-case name="TestBank" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+            <test-case name="TestBranch" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+            <test-case name="TestAccount" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+            <test-case name="TestAccountType" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+            <test-case name="TestFinalBalance" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+            <test-case name="TestMov0" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+            <test-case name="TestMov1" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+            <test-case name="TestMov4" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+          </results>
+        </test-suite>
+    </results>
+  </test-suite>
+</test-results>
