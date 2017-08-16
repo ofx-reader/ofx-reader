@@ -177,7 +177,7 @@ var
   ReturnValue: Boolean;
 begin
   FOFCReader := TOFXReader.Create(nil);
-  FOFCReader.ofxFile := '..\ofx-files\extrato.ofc';
+  FOFCReader.ofxFile := '..\..\ofx-files\extrato.ofc';
   ReturnValue := FOFCReader.Import;
   Assert.IsTrue(ReturnValue);
 end;
