@@ -173,7 +173,7 @@ end;
 
 function TOFXReader.InfLine ( sLine : string ): string;
 var
-  iTemp : integer;
+   iTemp : integer;
 begin
   Result := '';
   sLine := Trim(sLine);
@@ -182,9 +182,11 @@ begin
     sLine := Trim(sLine);
     iTemp := Pos('>', sLine);
     if pos('</', sLine) > 0 then
-       Result := copy(sLine, iTemp+1, pos('</', sLine)-iTemp-1)
+      Result := copy(sLine, iTemp+1, pos('</', sLine)-iTemp-1)
     else
-       Result := copy(sLine, iTemp+1, iTemp-1);
+      // allows you to read the whole line when there is no completion of </ on the same line
+      // made by weberdepaula@gmail.com
+      Result := copy(sLine, iTemp+1, length(sLine));
   end;
 end;
 
