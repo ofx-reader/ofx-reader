@@ -66,3 +66,15 @@ __recovery/
 *.stat
 *.ppu
 *.compiled
+
+# Lazarus automatically generated files
+*.lps          #keeps layout of windows, not needed in GIT
+*.dbg          #external debug symbols files
+*.rsj
+*.rst
+*.orbackup
+lib
+#*.ppu <--------- these are duplicates, so, commented 'em out
+#*.o
+#*.compiled
+*.fuse_hidden* #actually has nothing to do with Lazarus, but these files might appear under Linux when compiling on NTFS system
