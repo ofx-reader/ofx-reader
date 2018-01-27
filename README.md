@@ -1,4 +1,6 @@
 # OFX/OFC Reader
+[![github closed issues](https://img.shields.io/github/issues-closed-raw/leogregianin/ofx-reader.svg?style=flat-square)](https://github.com/leogregianin/ofx-reader/issues?q=is%3Aissue+is%3Aclosed)
+
 Read the OFX (Open Financial Exchange) and OFC (Open Financial Connectivity) file formats.
 
 About
@@ -51,4 +53,4 @@ Contributors are listed [here](https://github.com/leogregianin/ofx-reader/graphs
 License
 -------
 
-[The MIT License](LICENSE).
+[MIT License](LICENSE).
