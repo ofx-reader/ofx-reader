@@ -61,8 +61,8 @@ procedure TForm1.FormCreate(Sender: TObject);
 const
   STR_SIZE = 60;
 begin
-  ClientDataSet1.FieldDefs.Add('INDEX', ftInteger);
-  ClientDataSet1.FieldDefs.Add('ID', ftLargeint);
+  ClientDataSet1.FieldDefs.Add('INDEX', ftString, STR_SIZE);
+  ClientDataSet1.FieldDefs.Add('ID', ftString, STR_SIZE);
   ClientDataSet1.FieldDefs.Add('DOCUMENT', ftString, STR_SIZE);
   ClientDataSet1.FieldDefs.Add('MOVDATE', ftDate);
   ClientDataSet1.FieldDefs.Add('MOVTYPE', ftString, STR_SIZE);
