@@ -28,6 +28,8 @@ type
     BranchID : string;
     AccountID : string;
     AccountType : string;
+    DateStart : string;
+    DateEnd : string;
     FinalBalance : String;
     constructor Create( AOwner: TComponent ); override;
     destructor Destroy; override;
@@ -95,6 +97,8 @@ var
   sLine : string;
 begin
   Clear;
+  DateStart:= ''; 
+  DateEnd:= '';
   bOFX := false;
   if not FileExists(FOFXFile) then
     raise Exception.Create('File not found!');
@@ -122,6 +126,22 @@ begin
 
       // Account type
       if FindString('<ACCTTYPE>', sLine) then AccountType := InfLine(sLine);
+
+      //Date Start and Date End
+      if FindString('<DTSTART>',sLine) then
+      begin
+            if Trim(sLine) <> '' then
+                DateStart:= DateToStr(EncodeDate(StrToIntDef(copy(InfLine(sLine),1,4), 0),
+                                                          StrToIntDef(copy(InfLine(sLine),5,2), 0),
+                                                          StrToIntDef(copy(InfLine(sLine),7,2), 0)));
+      end;
+      if FindString('<DTEND>',sLine) then
+      begin
+            if Trim(sLine) <> '' then
+                DateEnd:=  DateToStr(EncodeDate(StrToIntDef(copy(InfLine(sLine),1,4), 0),
+                                                                StrToIntDef(copy(InfLine(sLine),5,2), 0),
+                                                                StrToIntDef(copy(InfLine(sLine),7,2), 0)));
+      end;
 
       // Final
       if FindString('<LEDGER>', sLine) or FindString('<BALAMT>', sLine) then
