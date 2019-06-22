@@ -3,9 +3,15 @@ unit ExampleClientDataset;
 interface
 
 uses
+  {$IfDef VER210}
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DB, DBClient, Grids, DBGrids, StdCtrls, ExtCtrls;
+  {$Else}
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Datasnap.DBClient, Vcl.Grids,
-  Vcl.DBGrids, Vcl.StdCtrls, Vcl.ExtCtrls;
+  Vcl.DBGrids, Vcl.StdCtrls, Vcl.ExtCtrls, DB, DBClient, Controls, Grids,
+  DBGrids, StdCtrls, Classes, ExtCtrls;
+  {$EndIf}
 
 type
   TForm1 = class(TForm)

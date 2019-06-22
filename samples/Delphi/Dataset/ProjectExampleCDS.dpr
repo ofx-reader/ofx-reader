@@ -1,7 +1,11 @@
 program ProjectExampleCDS;
 
 uses
+  {$IfDef VER210}
+  Forms,
+  {$Else}
   Vcl.Forms,
+  {$EndIf}
   ExampleClientDataset in 'ExampleClientDataset.pas' {Form1},
   ofxreader in '..\..\..\src\ofxreader.pas';
 

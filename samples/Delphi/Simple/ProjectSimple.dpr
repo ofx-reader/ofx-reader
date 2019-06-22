@@ -1,7 +1,11 @@
 program ProjectSimple;
 
 uses
+  {$IfDef VER210}
+  Forms,
+  {$Else}
   Vcl.Forms,
+  {$EndIf}
   Simple in 'Simple.pas' {FormExample1},
   ofxreader in '..\..\..\src\ofxreader.pas';
 
