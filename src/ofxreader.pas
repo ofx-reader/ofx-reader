@@ -162,13 +162,12 @@ begin
             Inc(i);
             sLine := oFile.Strings[i];
 
-            if FindString('<TRNTYPE>', sLine) then
-            begin
-              if (InfLine(sLine) = '0') or (InfLine(sLine) = 'CREDIT') OR
-                (InfLine(sLine) = 'DEP') then
+          if FindString('<TRNTYPE>', sLine) then
+          begin
+             if (InfLine(sLine) = '0') or (InfLine(sLine) = 'CREDIT') OR (InfLine(sLine) = 'DEP') then
                 oItem.MovType := 'C'
-              else if (InfLine(sLine) = '1') or (InfLine(sLine) = 'DEBIT') OR
-                (InfLine(sLine) = 'XFER') then
+             else
+             if (InfLine(sLine) = '1') or (InfLine(sLine) = 'DEBIT') OR (InfLine(sLine) = 'XFER') then
                 oItem.MovType := 'D'
               else
                 oItem.MovType := 'OTHER';
