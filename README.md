@@ -12,7 +12,14 @@ About
 
    * Compatible with all versions of Delphi / Lazarus. 
    
-   * Tested with free [Delphi Starter Edition](https://www.embarcadero.com/products/delphi/starter/promotional-download) and [Lazarus FPC IDE](https://www.lazarus-ide.org).
+   * Tested with [Delphi Community Edition](https://www.embarcadero.com/products/delphi/starter/promotional-download) and [Lazarus FPC IDE](https://www.lazarus-ide.org).
+ 
+Instalation (optional)
+-------
+For install in your project using [boss](https://github.com/HashLoad/boss):
+``` sh
+$ boss install ofx-reader
+``` 
  
 Example
 -------
