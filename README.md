@@ -3,6 +3,12 @@
 
 Read the OFX (Open Financial Exchange) and OFC (Open Financial Connectivity) file formats.
 
+
+## Sponsor
+
+<a href="https://www.buymeacoffee.com/leogregianin" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/lato-orange.png" alt="Buy Me A Coffee" style="height: 35px !important;width: 150px !important;" ></a>
+
+
 About
 -------
 
