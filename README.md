@@ -24,7 +24,7 @@ Instalation (optional)
 -------
 For install in your project using [boss](https://github.com/HashLoad/boss):
 ``` sh
-$ boss install ofx-reader
+$ boss install github.com/leogregianin/ofx-reader
 ``` 
  
 Example
