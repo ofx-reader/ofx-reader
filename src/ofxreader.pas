@@ -17,6 +17,7 @@ type
     MovDate: TDateTime;
     Value: String;
     ID: string;
+    RefNum: string;
     Document: string;
     Description: string;
   end;
@@ -181,6 +182,9 @@ begin
 
             if FindString('<FITID>', sLine) then
               oItem.ID := InfLine(sLine);
+
+            if FindString('<REFNUM>', sLine) then
+              oItem.RefNum := InfLine(sLine);
 
             if FindString('<CHKNUM>', sLine) or FindString('<CHECKNUM>', sLine) then
               oItem.Document := InfLine(sLine);
