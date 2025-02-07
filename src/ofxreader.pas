@@ -9,7 +9,7 @@ unit ofxreader;
 
 interface
 
-uses classes, SysUtils;
+uses Classes, SysUtils, DateUtils;
 
 type
   TOFXItem = class
@@ -44,6 +44,7 @@ type
     function Add: TOFXItem;
     function InfLine(sLine: string): string;
     function FindString(sSubString, sString: string): boolean;
+    function ConvertDateUnix(DataStr: string): TDateTime;
   protected
   published
     property OFXFile: string read FOFXFile write FOFXFile;
@@ -77,6 +78,20 @@ begin
   while FListItems.Count > 0 do
     Delete(0);
   FListItems.Clear;
+end;
+
+function TOFXReader.ConvertDateUnix(DataStr: string): TDateTime;
+var
+  Timestamp: Int64;
+begin
+  try
+    // Converte para número
+    Timestamp := StrToInt64Def(DataStr, 0);
+    // Converte o timestamp Unix para TDateTime
+    Result := UnixToDateTime(Timestamp div 1000);
+  except
+    raise Exception.Create('Erro ao converter a data: ' + DataStr);
+  end;
 end;
 
 function TOFXReader.Count: integer;
@@ -136,18 +151,30 @@ begin
         if FindString('<DTSTART>', sLine) then
         begin
           if Trim(sLine) <> '' then
-            DateStart :=
-              DateToStr(EncodeDate(StrToIntDef(copy(InfLine(sLine), 1, 4), 0),
-              StrToIntDef(copy(InfLine(sLine), 5, 2), 0),
-              StrToIntDef(copy(InfLine(sLine), 7, 2), 0)));
+          begin
+            try
+              DateStart :=
+                DateToStr(EncodeDate(StrToIntDef(Copy(InfLine(sLine), 1, 4), 0),
+                StrToIntDef(Copy(InfLine(sLine), 5, 2), 0),
+                StrToIntDef(Copy(InfLine(sLine), 7, 2), 0)));
+            except
+              DateStart := DateToStr(ConvertDateUnix(Copy(InfLine(sLine), 1, 4) + Copy(InfLine(sLine), 5, 2) + Copy(InfLine(sLine), 7, 7) ));
+            end;
+          end;
         end;
         if FindString('<DTEND>', sLine) then
         begin
           if Trim(sLine) <> '' then
-            DateEnd :=
-              DateToStr(EncodeDate(StrToIntDef(copy(InfLine(sLine), 1, 4), 0),
-              StrToIntDef(copy(InfLine(sLine), 5, 2), 0),
-              StrToIntDef(copy(InfLine(sLine), 7, 2), 0)));
+          begin
+            try
+              DateEnd :=
+                DateToStr(EncodeDate(StrToIntDef(Copy(InfLine(sLine), 1, 4), 0),
+                StrToIntDef(Copy(InfLine(sLine), 5, 2), 0),
+                StrToIntDef(Copy(InfLine(sLine), 7, 2), 0)));
+            except
+              DateEnd := DateToStr(ConvertDateUnix(Copy(InfLine(sLine), 1, 4) + Copy(InfLine(sLine), 5, 2) + Copy(InfLine(sLine), 7, 7) ));
+            end;
+          end;
         end;
 
         // Final
@@ -178,14 +205,14 @@ begin
               if Copy(InfLine(sLine), 1, 4) <> '' then
                 oItem.MovDate :=
                   EncodeDate(StrToIntDef(Copy(InfLine(sLine), 1, 4), 0),
-                  StrToIntDef(copy(InfLine(sLine), 5, 2), 0),
-                  StrToIntDef(copy(InfLine(sLine), 7, 2), 0));
+                  StrToIntDef(Copy(InfLine(sLine), 5, 2), 0),
+                  StrToIntDef(Copy(InfLine(sLine), 7, 2), 0));
 
             if (StrToInt(BankID) = 341) and (oItem.MovDate = 0) and FindString('<FITID>', sLine)  then
               oItem.MovDate :=
                   EncodeDate(StrToIntDef(Copy(InfLine(sLine), 1, 4), 0),
-                  StrToIntDef(copy(InfLine(sLine), 5, 2), 0),
-                  StrToIntDef(copy(InfLine(sLine), 7, 2), 0));
+                  StrToIntDef(Copy(InfLine(sLine), 5, 2), 0),
+                  StrToIntDef(Copy(InfLine(sLine), 7, 2), 0));
 
             if FindString('<FITID>', sLine) then
               oItem.ID := InfLine(sLine);
@@ -224,11 +251,11 @@ begin
     sLine := Trim(sLine);
     iTemp := Pos('>', sLine);
     if Pos('</', sLine) > 0 then
-      Result := copy(sLine, iTemp + 1, Pos('</', sLine) - iTemp - 1)
+      Result := Copy(sLine, iTemp + 1, Pos('</', sLine) - iTemp - 1)
     else
       // allows you to read the whole line when there is no completion of </ on the same line
       // made by weberdepaula@gmail.com
-      Result := copy(sLine, iTemp + 1, length(sLine));
+      Result := Copy(sLine, iTemp + 1, length(sLine));
   end;
 end;
 
