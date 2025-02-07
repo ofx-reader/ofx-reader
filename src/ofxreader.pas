@@ -38,6 +38,7 @@ type
     function Count: integer;
   private
     FOFXFile: string;
+    FOFXContent: string;
     FListItems: TList;
     procedure Clear;
     procedure Delete(iIndex: integer);
@@ -48,6 +49,7 @@ type
   protected
   published
     property OFXFile: string read FOFXFile write FOFXFile;
+    property OFXContent: string read FOFXContent write FOFXContent;
   end;
 
 procedure Register;
@@ -116,11 +118,14 @@ begin
   DateStart := '';
   DateEnd := '';
   bOFX := false;
-  if not FileExists(FOFXFile) then
+  if (FOFXContent = '') and (not FileExists(FOFXFile)) then
     raise Exception.Create('File not found!');
   oFile := TStringList.Create;
   try
-    oFile.LoadFromFile(FOFXFile);
+    if (FOFXContent = '') then
+      oFile.LoadFromFile(FOFXFile)
+    else
+      oFile.Add(FOFXContent);
     i := 0;
 
     while i < oFile.Count do
