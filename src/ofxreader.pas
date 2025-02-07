@@ -4,6 +4,7 @@
 
 // 2006 - Eduardo Bento da Rocha (YoungArts)
 // 2016 - Leonardo Gregianin - github.com/leogregianin
+// 2025 - Marlon Nardi - github.com/marlonnardi
 
 unit ofxreader;
 
@@ -20,6 +21,7 @@ type
     RefNum: string;
     Document: string;
     Description: string;
+    Name: string;
   end;
 
   TOFXReader = class(TComponent)
@@ -45,7 +47,7 @@ type
     function Add: TOFXItem;
     function InfLine(sLine: string): string;
     function FindString(sSubString, sString: string): boolean;
-    function ConvertDateUnix(DataStr: string): TDateTime;
+    function ConvertDate(DataStr: string): TDateTime;
   protected
   published
     property OFXFile: string read FOFXFile write FOFXFile;
@@ -82,17 +84,18 @@ begin
   FListItems.Clear;
 end;
 
-function TOFXReader.ConvertDateUnix(DataStr: string): TDateTime;
+function TOFXReader.ConvertDate(DataStr: string): TDateTime;
 var
   Timestamp: Int64;
+  FS: TFormatSettings;
 begin
+  FS := TFormatSettings.Create('pt-BR');
   try
-    // Converte para número
-    Timestamp := StrToInt64Def(DataStr, 0);
-    // Converte o timestamp Unix para TDateTime
-    Result := UnixToDateTime(Timestamp div 1000);
+    FS.ShortDateFormat := 'ddmmyyyy';
+    Result := StrToDate(Copy(DataStr, 1, 8), FS);
   except
-    raise Exception.Create('Erro ao converter a data: ' + DataStr);
+    on e: Exception do
+      raise Exception.Create('Erro ao converter a data: ' + DataStr + ' ' + e.Message);
   end;
 end;
 
@@ -123,7 +126,7 @@ begin
   oFile := TStringList.Create;
   try
     if (FOFXContent = '') then
-      oFile.LoadFromFile(FOFXFile)
+      oFile.LoadFromFile(FOFXFile, TEncoding.UTF8)
     else
       oFile.Add(FOFXContent);
     i := 0;
@@ -163,7 +166,7 @@ begin
                 StrToIntDef(Copy(InfLine(sLine), 5, 2), 0),
                 StrToIntDef(Copy(InfLine(sLine), 7, 2), 0)));
             except
-              DateStart := DateToStr(ConvertDateUnix(Copy(InfLine(sLine), 1, 4) + Copy(InfLine(sLine), 5, 2) + Copy(InfLine(sLine), 7, 7) ));
+              DateStart := DateToStr(ConvertDate(InfLine(sLine)));
             end;
           end;
         end;
@@ -177,7 +180,7 @@ begin
                 StrToIntDef(Copy(InfLine(sLine), 5, 2), 0),
                 StrToIntDef(Copy(InfLine(sLine), 7, 2), 0)));
             except
-              DateEnd := DateToStr(ConvertDateUnix(Copy(InfLine(sLine), 1, 4) + Copy(InfLine(sLine), 5, 2) + Copy(InfLine(sLine), 7, 7) ));
+              DateEnd := DateToStr(ConvertDate(InfLine(sLine)));
             end;
           end;
         end;
@@ -208,16 +211,28 @@ begin
 
             if FindString('<DTPOSTED>', sLine) then
               if Copy(InfLine(sLine), 1, 4) <> '' then
-                oItem.MovDate :=
-                  EncodeDate(StrToIntDef(Copy(InfLine(sLine), 1, 4), 0),
-                  StrToIntDef(Copy(InfLine(sLine), 5, 2), 0),
-                  StrToIntDef(Copy(InfLine(sLine), 7, 2), 0));
+              begin
+                try
+                  oItem.MovDate :=
+                    EncodeDate(StrToIntDef(Copy(InfLine(sLine), 1, 4), 0),
+                    StrToIntDef(Copy(InfLine(sLine), 5, 2), 0),
+                    StrToIntDef(Copy(InfLine(sLine), 7, 2), 0));
+                except
+                  oItem.MovDate := ConvertDate(InfLine(sLine));
+                end;
+              end;
 
             if (StrToInt(BankID) = 341) and (oItem.MovDate = 0) and FindString('<FITID>', sLine)  then
-              oItem.MovDate :=
-                  EncodeDate(StrToIntDef(Copy(InfLine(sLine), 1, 4), 0),
-                  StrToIntDef(Copy(InfLine(sLine), 5, 2), 0),
-                  StrToIntDef(Copy(InfLine(sLine), 7, 2), 0));
+            begin
+              try
+                oItem.MovDate :=
+                    EncodeDate(StrToIntDef(Copy(InfLine(sLine), 1, 4), 0),
+                    StrToIntDef(Copy(InfLine(sLine), 5, 2), 0),
+                    StrToIntDef(Copy(InfLine(sLine), 7, 2), 0));
+              except
+                oItem.MovDate := ConvertDate(InfLine(sLine));
+              end;
+            end;
 
             if FindString('<FITID>', sLine) then
               oItem.ID := InfLine(sLine);
@@ -233,6 +248,9 @@ begin
 
             if FindString('<TRNAMT>', sLine) then
               oItem.Value := InfLine(sLine);
+
+            if FindString('<NAME>', sLine) then
+              oItem.Name := InfLine(sLine);
           end;
         end;
 
