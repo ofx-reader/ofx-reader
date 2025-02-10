@@ -1,0 +1,313 @@
+OFXHEADER:100
+DATA:OFXSGML
+VERSION:102
+SECURITY:NONE
+ENCODING:USASCII
+CHARSET:1252
+COMPRESSION:NONE
+OLDFILEUID:NONE
+NEWFILEUID:NONE
+
+<OFX>
+    <SIGNONMSGSRSV1>
+        <SONRS>
+            <STATUS>
+                <CODE>0</CODE>
+                <SEVERITY>INFO</SEVERITY>
+            </STATUS>
+            <DTSERVER>20250203103752.363</DTSERVER>
+            <LANGUAGE>POR</LANGUAGE>
+        </SONRS>
+    </SIGNONMSGSRSV1>
+    <BANKMSGSRSV1>
+        <STMTTRNRS>
+            <TRNUID>1001</TRNUID>
+            <STATUS>
+                <CODE>0</CODE>
+                <SEVERITY>INFO</SEVERITY>
+            </STATUS>
+            <STMTRS>
+                <CURDEF>BRL</CURDEF>
+                <BANKACCTFROM>
+                    <BANKID>0104</BANKID>
+                    <BRANCHID>03438</BRANCHID>
+                    <ACCTID>0005779806116</ACCTID>
+                    <ACCTTYPE>CHECKING</ACCTTYPE>
+                </BANKACCTFROM>
+                <BANKTRANLIST>
+                    <DTSTART>20241231030000.000</DTSTART>
+                    <DTEND>20241201030000.000</DTEND>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20241202030000.000</DTPOSTED>
+                        <DTAVAIL>20241202030000.000</DTAVAIL>
+                        <TRNAMT>-500.00</TRNAMT>
+                        <FITID>301005</FITID>
+                        <NAME>ENV PIX CH</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20241202030000.000</DTPOSTED>
+                        <DTAVAIL>20241202030000.000</DTAVAIL>
+                        <TRNAMT>-100.00</TRNAMT>
+                        <FITID>369639</FITID>
+                        <NAME>DB CX CAP</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20241202030000.000</DTPOSTED>
+                        <DTAVAIL>20241202030000.000</DTAVAIL>
+                        <TRNAMT>-500.00</TRNAMT>
+                        <FITID>021707</FITID>
+                        <NAME>ENV PIX CH</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20241202030000.000</DTPOSTED>
+                        <DTAVAIL>20241202030000.000</DTAVAIL>
+                        <TRNAMT>-25.42</TRNAMT>
+                        <FITID>000000</FITID>
+                        <NAME>DEB IOF</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20241202030000.000</DTPOSTED>
+                        <DTAVAIL>20241202030000.000</DTAVAIL>
+                        <TRNAMT>-95.89</TRNAMT>
+                        <FITID>000000</FITID>
+                        <NAME>DEB JUROS</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>CREDIT</TRNTYPE>
+                        <DTPOSTED>20241203030000.000</DTPOSTED>
+                        <DTAVAIL>20241203030000.000</DTAVAIL>
+                        <TRNAMT>25000.00</TRNAMT>
+                        <FITID>000649</FITID>
+                        <NAME>RG CDB 95</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20241203030000.000</DTPOSTED>
+                        <DTAVAIL>20241203030000.000</DTAVAIL>
+                        <TRNAMT>-1367.93</TRNAMT>
+                        <FITID>031339</FITID>
+                        <NAME>ENV PIX CH</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20241203030000.000</DTPOSTED>
+                        <DTAVAIL>20241203030000.000</DTAVAIL>
+                        <TRNAMT>-2132.07</TRNAMT>
+                        <FITID>031340</FITID>
+                        <NAME>ENV PIX CH</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20241203030000.000</DTPOSTED>
+                        <DTAVAIL>20241203030000.000</DTAVAIL>
+                        <TRNAMT>-4114.85</TRNAMT>
+                        <FITID>031341</FITID>
+                        <NAME>ENV PIX CH</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20241203030000.000</DTPOSTED>
+                        <DTAVAIL>20241203030000.000</DTAVAIL>
+                        <TRNAMT>-6850.23</TRNAMT>
+                        <FITID>031342</FITID>
+                        <NAME>ENV PIX CH</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20241203030000.000</DTPOSTED>
+                        <DTAVAIL>20241203030000.000</DTAVAIL>
+                        <TRNAMT>-3034.92</TRNAMT>
+                        <FITID>031344</FITID>
+                        <NAME>ENV PIX CH</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20241203030000.000</DTPOSTED>
+                        <DTAVAIL>20241203030000.000</DTAVAIL>
+                        <TRNAMT>-5200.00</TRNAMT>
+                        <FITID>031346</FITID>
+                        <NAME>ENV PIX CH</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>CREDIT</TRNTYPE>
+                        <DTPOSTED>20241204030000.000</DTPOSTED>
+                        <DTAVAIL>20241204030000.000</DTAVAIL>
+                        <TRNAMT>24684.69</TRNAMT>
+                        <FITID>041039</FITID>
+                        <NAME>CRED PIX</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20241204030000.000</DTPOSTED>
+                        <DTAVAIL>20241204030000.000</DTAVAIL>
+                        <TRNAMT>-15885.15</TRNAMT>
+                        <FITID>041136</FITID>
+                        <NAME>ENV PIX CH</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20241206030000.000</DTPOSTED>
+                        <DTAVAIL>20241206030000.000</DTAVAIL>
+                        <TRNAMT>-5000.00</TRNAMT>
+                        <FITID>061144</FITID>
+                        <NAME>ENV PIX CH</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20241206030000.000</DTPOSTED>
+                        <DTAVAIL>20241206030000.000</DTAVAIL>
+                        <TRNAMT>-3000.00</TRNAMT>
+                        <FITID>062117</FITID>
+                        <NAME>ENV PIX CH</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20241209030000.000</DTPOSTED>
+                        <DTAVAIL>20241209030000.000</DTAVAIL>
+                        <TRNAMT>-1000.00</TRNAMT>
+                        <FITID>071255</FITID>
+                        <NAME>ENV PIX CH</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20241209030000.000</DTPOSTED>
+                        <DTAVAIL>20241209030000.000</DTAVAIL>
+                        <TRNAMT>-1000.00</TRNAMT>
+                        <FITID>091711</FITID>
+                        <NAME>ENV PIX CH</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20241210030000.000</DTPOSTED>
+                        <DTAVAIL>20241210030000.000</DTAVAIL>
+                        <TRNAMT>-2000.00</TRNAMT>
+                        <FITID>101144</FITID>
+                        <NAME>ENV PIX CH</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>CREDIT</TRNTYPE>
+                        <DTPOSTED>20241211030000.000</DTPOSTED>
+                        <DTAVAIL>20241211030000.000</DTAVAIL>
+                        <TRNAMT>1000.00</TRNAMT>
+                        <FITID>111316</FITID>
+                        <NAME>CR PIX CHA</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>CREDIT</TRNTYPE>
+                        <DTPOSTED>20241220030000.000</DTPOSTED>
+                        <DTAVAIL>20241220030000.000</DTAVAIL>
+                        <TRNAMT>42000.00</TRNAMT>
+                        <FITID>002578</FITID>
+                        <NAME>RG CDB 95</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>CREDIT</TRNTYPE>
+                        <DTPOSTED>20241220030000.000</DTPOSTED>
+                        <DTAVAIL>20241220030000.000</DTAVAIL>
+                        <TRNAMT>25000.00</TRNAMT>
+                        <FITID>201446</FITID>
+                        <NAME>CR PIX CHA</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20241220030000.000</DTPOSTED>
+                        <DTAVAIL>20241220030000.000</DTAVAIL>
+                        <TRNAMT>-17134.58</TRNAMT>
+                        <FITID>201449</FITID>
+                        <NAME>ENVIO PIX</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20241220030000.000</DTPOSTED>
+                        <DTAVAIL>20241220030000.000</DTAVAIL>
+                        <TRNAMT>-39000.00</TRNAMT>
+                        <FITID>201451</FITID>
+                        <NAME>ENV PIX CH</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20241220030000.000</DTPOSTED>
+                        <DTAVAIL>20241220030000.000</DTAVAIL>
+                        <TRNAMT>-4000.00</TRNAMT>
+                        <FITID>201453</FITID>
+                        <NAME>ENV PIX CH</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20241220030000.000</DTPOSTED>
+                        <DTAVAIL>20241220030000.000</DTAVAIL>
+                        <TRNAMT>-1501.42</TRNAMT>
+                        <FITID>201458</FITID>
+                        <NAME>ENV PIX CH</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20241223030000.000</DTPOSTED>
+                        <DTAVAIL>20241223030000.000</DTAVAIL>
+                        <TRNAMT>-1190.17</TRNAMT>
+                        <FITID>211006</FITID>
+                        <NAME>ENV PIX CH</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20241223030000.000</DTPOSTED>
+                        <DTAVAIL>20241223030000.000</DTAVAIL>
+                        <TRNAMT>-69.95</TRNAMT>
+                        <FITID>231449</FITID>
+                        <NAME>ENVIO PIX</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>CREDIT</TRNTYPE>
+                        <DTPOSTED>20241223030000.000</DTPOSTED>
+                        <DTAVAIL>20241223030000.000</DTAVAIL>
+                        <TRNAMT>2000.00</TRNAMT>
+                        <FITID>231557</FITID>
+                        <NAME>CRED PIX</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20241223030000.000</DTPOSTED>
+                        <DTAVAIL>20241223030000.000</DTAVAIL>
+                        <TRNAMT>-4000.00</TRNAMT>
+                        <FITID>231951</FITID>
+                        <NAME>ENV PIX CH</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20241226030000.000</DTPOSTED>
+                        <DTAVAIL>20241226030000.000</DTAVAIL>
+                        <TRNAMT>-94.50</TRNAMT>
+                        <FITID>202411</FITID>
+                        <NAME>DB T CESTA</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20250102030000.000</DTPOSTED>
+                        <DTAVAIL>20250102030000.000</DTAVAIL>
+                        <TRNAMT>-3.20</TRNAMT>
+                        <FITID>000000</FITID>
+                        <NAME>DEB IOF</NAME>
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>DEBIT</TRNTYPE>
+                        <DTPOSTED>20250102030000.000</DTPOSTED>
+                        <DTAVAIL>20250102030000.000</DTAVAIL>
+                        <TRNAMT>-6.03</TRNAMT>
+                        <FITID>000000</FITID>
+                        <NAME>DEB JUROS</NAME>
+                    </STMTTRN>
+                </BANKTRANLIST>
+                <LEDGERBAL>
+                    <BALAMT>2166.62</BALAMT>
+                    <DTASOF>20250102030000.000</DTASOF>
+                </LEDGERBAL>
+                <MKTGINFO>Gerenciador CAIXA - A nova forma de gerenciar sua empresa.</MKTGINFO>
+            </STMTRS>
+        </STMTTRNRS>
+    </BANKMSGSRSV1>
+</OFX>

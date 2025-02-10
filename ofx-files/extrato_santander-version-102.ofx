@@ -1,0 +1,167 @@
+OFXHEADER:100
+DATA:OFXSGML
+VERSION:102
+SECURITY:NONE
+ENCODING:USASCII
+CHARSET:1252
+COMPRESSION:NONE
+OLDFILEUID:NONE
+NEWFILEUID:NONE
+<OFX>
+    <SIGNONMSGSRSV1>
+        <SONRS>
+            <STATUS>
+                <CODE>0
+                <SEVERITY>INFO
+            </STATUS>
+            <DTSERVER>2025025173830[-3:GMT]
+            <LANGUAGE>ENG
+            <FI>
+                <ORG>SANTANDER
+                <FID>SANTANDER
+            </FI>
+        </SONRS>
+    </SIGNONMSGSRSV1>
+    <BANKMSGSRSV1>
+        <STMTTRNRS>
+            <TRNUID>1
+            <STATUS>
+                <CODE>0
+                <SEVERITY>INFO
+            </STATUS>
+            <STMTRS>
+                <CURDEF>BRC
+                <BANKACCTFROM>
+                    <BANKID>033
+                    <ACCTID>4173130033993
+                    <ACCTTYPE>CHECKING
+                </BANKACCTFROM>
+                <BANKTRANLIST>
+                    <DTSTART>2025025173830[-3:GMT]
+                    <DTEND>2025025173830[-3:GMT]
+                    <STMTTRN>
+                        <TRNTYPE>OTHER
+                        <DTPOSTED>20250131000000[-3:GMT]
+                        <TRNAMT>-3,50
+                        <FITID>00002502
+                        <CHECKNUM>00002502
+                        <PAYEEID>0
+                        <MEMO>TARIFA AVULSA ENVIO PIX
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>OTHER
+                        <DTPOSTED>20250131000000[-3:GMT]
+                        <TRNAMT>-175,90
+                        <FITID>00003502
+                        <CHECKNUM>00003502
+                        <PAYEEID>0
+                        <MEMO>PIX ENVIADO AGROPECUARIA AGRONOVA
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>OTHER
+                        <DTPOSTED>20250131000000[-3:GMT]
+                        <TRNAMT>-166,00
+                        <FITID>00004502
+                        <CHECKNUM>00004502
+                        <PAYEEID>0
+                        <MEMO>PIX ENVIADO DIMECOL
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>OTHER
+                        <DTPOSTED>20250131000000[-3:GMT]
+                        <TRNAMT>-82,22
+                        <FITID>00005502
+                        <CHECKNUM>00005502
+                        <PAYEEID>0
+                        <MEMO>PIX ENVIADO SUPERMERCADO JACO LTDA
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>OTHER
+                        <DTPOSTED>20250131000000[-3:GMT]
+                        <TRNAMT>996,00
+                        <FITID>00006502
+                        <CHECKNUM>00006502
+                        <PAYEEID>0
+                        <MEMO>PIX RECEBIDO 45824282315
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>OTHER
+                        <DTPOSTED>20250131000000[-3:GMT]
+                        <TRNAMT>316,00
+                        <FITID>00007502
+                        <CHECKNUM>00007502
+                        <PAYEEID>0
+                        <MEMO>PIX RECEBIDO 45294619000194
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>OTHER
+                        <DTPOSTED>20250131000000[-3:GMT]
+                        <TRNAMT>1000,00
+                        <FITID>00008502
+                        <CHECKNUM>00008502
+                        <PAYEEID>0
+                        <MEMO>PIX RECEBIDO 48001538320
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>OTHER
+                        <DTPOSTED>20250131000000[-3:GMT]
+                        <TRNAMT>-600,00
+                        <FITID>00009502
+                        <CHECKNUM>00009502
+                        <PAYEEID>0
+                        <MEMO>PIX ENVIADO ANTONIO ROBSON GOMES PERE
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>OTHER
+                        <DTPOSTED>20250131000000[-3:GMT]
+                        <TRNAMT>-80,00
+                        <FITID>00010502
+                        <CHECKNUM>00010502
+                        <PAYEEID>0
+                        <MEMO>PIX ENVIADO JUNIO DOS REIS GASPAR
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>OTHER
+                        <DTPOSTED>20250131000000[-3:GMT]
+                        <TRNAMT>-480,45
+                        <FITID>00011502
+                        <CHECKNUM>00011502
+                        <PAYEEID>0
+                        <MEMO>PIX ENVIADO MARCUS VINICIUS JERONIMO
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>OTHER
+                        <DTPOSTED>20250131000000[-3:GMT]
+                        <TRNAMT>-8,20
+                        <FITID>00085168
+                        <CHECKNUM>00085168
+                        <PAYEEID>0
+                        <MEMO>COMPRA CARTAO DEB MC 31/01 CONCESSIONARIA NASC
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>OTHER
+                        <DTPOSTED>20250131000000[-3:GMT]
+                        <TRNAMT>-51,50
+                        <FITID>00494068
+                        <CHECKNUM>00494068
+                        <PAYEEID>0
+                        <MEMO>COMPRA CARTAO DEB MC 31/01 RESTAURANTE REI DO
+                    </STMTTRN>
+                    <STMTTRN>
+                        <TRNTYPE>OTHER
+                        <DTPOSTED>20250131000000[-3:GMT]
+                        <TRNAMT>-96,00
+                        <FITID>00494268
+                        <CHECKNUM>00494268
+                        <PAYEEID>0
+                        <MEMO>COMPRA CARTAO DEB MC 31/01 FREEDOM
+                    </STMTTRN>
+                </BANKTRANLIST>
+                <LEDGERBAL>
+                    <BALAMT>2849,43
+                    <DTASOF>2025025173830[-3:GMT]
+                </LEDGERBAL>
+            </STMTRS>
+        </STMTTRNRS>
+    </BANKMSGSRSV1>
+</OFX>
