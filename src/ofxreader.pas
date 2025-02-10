@@ -94,8 +94,8 @@ begin
     FS.ShortDateFormat := 'ddmmyyyy';
     Result := StrToDate(Copy(DataStr, 1, 8), FS);
   except
-    on e: Exception do
-      raise Exception.Create('Erro ao converter a data: ' + DataStr + ' ' + e.Message);
+    //on e: Exception do
+    //  raise Exception.Create('Erro ao converter a data: ' + DataStr + ' ' + e.Message);
   end;
 end;
 
@@ -126,7 +126,13 @@ begin
   oFile := TStringList.Create;
   try
     if (FOFXContent = '') then
-      oFile.LoadFromFile(FOFXFile, TEncoding.UTF8)
+    begin
+      try
+        oFile.LoadFromFile(FOFXFile, TEncoding.UTF8);
+      except
+        oFile.LoadFromFile(FOFXFile);
+      end;
+    end
     else
       oFile.Add(FOFXContent);
     i := 0;
@@ -222,7 +228,7 @@ begin
                 end;
               end;
 
-            if (StrToInt(BankID) = 341) and (oItem.MovDate = 0) and FindString('<FITID>', sLine)  then
+            if (BankID <> '') and (StrToInt(BankID) = 341) and (oItem.MovDate = 0) and FindString('<FITID>', sLine)  then
             begin
               try
                 oItem.MovDate :=
