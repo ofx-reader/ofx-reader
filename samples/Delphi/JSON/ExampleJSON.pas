@@ -34,9 +34,9 @@ var OFXReader1: TOFXReader;
     LJson, LJsonObject: TJSONObject;
     LArr: TJSONArray;
 begin
+   OFXReader1 := TOFXReader.Create(nil);
+   LJsonObject := TJSONObject.Create;
    try
-      OFXReader1 := TOFXReader.Create(nil);
-
       OFXReader1.OFXFile := Path.Text;
       try
          OFXReader1.Import;
@@ -44,9 +44,7 @@ begin
          raise Exception.Create('Error Message: ' + E.Message);
       end;
 
-
       // Create JSON
-      LJsonObject := TJSONObject.Create;
       LJsonObject.AddPair(TJSONPair.Create('Bank', OFXReader1.BankID));
       LJsonObject.AddPair(TJSONPair.Create('Branch', OFXReader1.BranchID));
       LJsonObject.AddPair(TJSONPair.Create('Account', OFXReader1.AccountID));
