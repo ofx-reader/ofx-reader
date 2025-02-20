@@ -84,6 +84,16 @@ begin
   FListItems.Clear;
 end;
 
+function TOFXReader.Count: integer;
+begin
+  Result := FListItems.Count;
+end;
+
+function TOFXReader.Get(iIndex: integer): TOFXItem;
+begin
+  Result := TOFXItem(FListItems.Items[iIndex]);
+end;
+
 function TOFXReader.ConvertDate(DataStr: string): TDateTime;
 var
   FS: TFormatSettings;
@@ -103,16 +113,6 @@ begin
   except
     Result := 0;
   end;
-end;
-
-function TOFXReader.Count: integer;
-begin
-  Result := FListItems.Count;
-end;
-
-function TOFXReader.Get(iIndex: integer): TOFXItem;
-begin
-  Result := TOFXItem(FListItems.Items[iIndex]);
 end;
 
 function TOFXReader.Import: boolean;
