@@ -66,6 +66,28 @@ type
     procedure TestMov4;
   end;
 
+  [TestFixture]
+  TFindStringTest = class(TObject)
+  private
+    FOFXReader: TOFXReader;
+  public
+    [Setup]
+    procedure SetUp;
+    [TearDown]
+    procedure TearDown;
+    [Test]
+    procedure Test_FindString_SubstringExists;
+    [Test]
+    procedure Test_FindString_SubstringDoesNotExist;
+    [Test]
+    procedure Test_FindString_CaseInsensitive;
+    [Test]
+    procedure Test_FindString_EmptySubstring;
+    [Test]
+    procedure Test_FindString_EmptyString;
+  end;
+
+
 implementation
 
 { TestTOFXReader }
@@ -272,8 +294,47 @@ begin
   end;
 end;
 
+{ TFindStringTest }
+
+procedure TFindStringTest.Setup;
+begin
+  FOFXReader := TOFXReader.Create(nil);
+end;
+
+procedure TFindStringTest.TearDown;
+begin
+  FOFXReader.Free;
+  FOFXReader := nil;
+end;
+
+procedure TFindStringTest.Test_FindString_SubstringExists;
+begin
+  Assert.IsTrue(FOFXReader.FindString('Cookies', 'I love Cookies!'));
+end;
+
+procedure TFindStringTest.Test_FindString_SubstringDoesNotExist;
+begin
+  Assert.IsFalse(FOFXReader.FindString('Ice Cream', 'I love Cookies!'));
+end;
+
+procedure TFindStringTest.Test_FindString_CaseInsensitive;
+begin
+  Assert.IsTrue(FOFXReader.FindString('cookies', 'I love Cookies!'));
+end;
+
+procedure TFindStringTest.Test_FindString_EmptySubstring;
+begin
+  Assert.IsTrue(FOFXReader.FindString('', 'I love Cookies!'), 'Empty substring should be found in any string');
+end;
+
+procedure TFindStringTest.Test_FindString_EmptyString;
+begin
+  Assert.IsFalse(FOFXReader.FindString('Cookies', ''), 'Non-empty substring should not be found in an empty string');
+end;
+
 initialization
   TDUnitX.RegisterTestFixture(TestTOFXReader);
   TDUnitX.RegisterTestFixture(TestTOFCReader);
+  TDUnitX.RegisterTestFixture(TFindStringTest);
 end.
 

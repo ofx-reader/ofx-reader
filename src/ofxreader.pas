@@ -38,6 +38,8 @@ type
     function Import: boolean;
     function Get(iIndex: integer): TOFXItem;
     function Count: integer;
+    function FindString(sSubString, sString: string): boolean;
+    function ConvertDate(DataStr: string): TDateTime;
   private
     FOFXFile: string;
     FOFXContent: string;
@@ -46,8 +48,6 @@ type
     procedure Delete(iIndex: integer);
     function Add: TOFXItem;
     function InfLine(sLine: string): string;
-    function FindString(sSubString, sString: string): boolean;
-    function ConvertDate(DataStr: string): TDateTime;
   protected
   published
     property OFXFile: string read FOFXFile write FOFXFile;
@@ -86,7 +86,6 @@ end;
 
 function TOFXReader.ConvertDate(DataStr: string): TDateTime;
 var
-  Timestamp: Int64;
   FS: TFormatSettings;
 begin
   FS := TFormatSettings.Create('pt-BR');
@@ -94,8 +93,7 @@ begin
     FS.ShortDateFormat := 'ddmmyyyy';
     Result := StrToDate(Copy(DataStr, 1, 8), FS);
   except
-    //on e: Exception do
-    //  raise Exception.Create('Erro ao converter a data: ' + DataStr + ' ' + e.Message);
+    Result := 0;
   end;
 end;
 
@@ -299,6 +297,9 @@ end;
 
 function TOFXReader.FindString(sSubString, sString: string): boolean;
 begin
+  if sSubString = '' then
+    Exit(True);
+
   Result := Pos(UpperCase(sSubString), UpperCase(sString)) > 0;
 end;
 
