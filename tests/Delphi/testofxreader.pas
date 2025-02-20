@@ -87,6 +87,26 @@ type
     procedure Test_FindString_EmptyString;
   end;
 
+type
+  [TestFixture]
+  TConvertDateTest = class
+  private
+    FOFXReader: TOFXReader;
+  public
+    [Setup]
+    procedure Setup;
+    [TearDown]
+    procedure TearDown;
+    [Test]
+    procedure Test_ConvertDate_ValidDate;
+    [Test]
+    procedure Test_ConvertDate_InvalidDate;
+    [Test]
+    procedure Test_ConvertDate_ShortString;
+    [Test]
+    procedure Test_ConvertDate_EmptyString;
+  end;
+
 
 implementation
 
@@ -332,9 +352,45 @@ begin
   Assert.IsFalse(FOFXReader.FindString('Cookies', ''), 'Non-empty substring should not be found in an empty string');
 end;
 
+
+{ TConvertDateTest }
+
+procedure TConvertDateTest.Setup;
+begin
+  FOFXReader := TOFXReader.Create(nil);
+end;
+
+procedure TConvertDateTest.TearDown;
+begin
+  FOFXReader.Free;
+  FOFXReader := nil;
+end;
+
+procedure TConvertDateTest.Test_ConvertDate_ValidDate;
+begin
+  Assert.AreEqual(EncodeDate(2023, 12, 25), FOFXReader.ConvertDate('25122023'));
+end;
+
+procedure TConvertDateTest.Test_ConvertDate_InvalidDate;
+begin
+  Assert.AreEqual<TDateTime>(0, FOFXReader.ConvertDate('99999999'));
+end;
+
+procedure TConvertDateTest.Test_ConvertDate_ShortString;
+begin
+  Assert.AreEqual<TDateTime>(0, FOFXReader.ConvertDate('2503'));
+end;
+
+procedure TConvertDateTest.Test_ConvertDate_EmptyString;
+begin
+  Assert.AreEqual<TDateTime>(0, FOFXReader.ConvertDate(''));
+end;
+
+
 initialization
   TDUnitX.RegisterTestFixture(TestTOFXReader);
   TDUnitX.RegisterTestFixture(TestTOFCReader);
   TDUnitX.RegisterTestFixture(TFindStringTest);
+  TDUnitX.RegisterTestFixture(TConvertDateTest);
 end.
 

@@ -38,6 +38,7 @@ type
     function Import: boolean;
     function Get(iIndex: integer): TOFXItem;
     function Count: integer;
+    function InfLine(sLine: string): string;
     function FindString(sSubString, sString: string): boolean;
     function ConvertDate(DataStr: string): TDateTime;
   private
@@ -47,7 +48,6 @@ type
     procedure Clear;
     procedure Delete(iIndex: integer);
     function Add: TOFXItem;
-    function InfLine(sLine: string): string;
   protected
   published
     property OFXFile: string read FOFXFile write FOFXFile;
@@ -87,11 +87,19 @@ end;
 function TOFXReader.ConvertDate(DataStr: string): TDateTime;
 var
   FS: TFormatSettings;
+  Day, Month, Year: string;
 begin
+  if Length(DataStr) < 8 then
+    Exit(0);
+
   FS := TFormatSettings.Create('pt-BR');
+
   try
-    FS.ShortDateFormat := 'ddmmyyyy';
-    Result := StrToDate(Copy(DataStr, 1, 8), FS);
+    Day := Copy(DataStr, 1, 2);
+    Month := Copy(DataStr, 3, 2);
+    Year := Copy(DataStr, 5, 4);
+
+    Result := StrToDate(Format('%s/%s/%s', [Day, Month, Year]), FS);
   except
     Result := 0;
   end;
@@ -280,8 +288,6 @@ begin
     if Pos('</', sLine) > 0 then
       Result := Copy(sLine, iTemp + 1, Pos('</', sLine) - iTemp - 1)
     else
-      // allows you to read the whole line when there is no completion of </ on the same line
-      // made by weberdepaula@gmail.com
       Result := Copy(sLine, iTemp + 1, length(sLine));
   end;
 end;
