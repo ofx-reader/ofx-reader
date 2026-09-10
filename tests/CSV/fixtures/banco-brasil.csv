@@ -1,0 +1,7 @@
+"Data","Lançamento","Detalhes","N° documento","Valor","Tipo Lançamento"
+"30/06/2026","Saldo Anterior","","","1.000,00",""
+"01/07/2026","Pix - Recebido","CLIENTE, TESTE","11111111111111","240,00","Entrada"
+"00/00/0000","Saldo do dia","","","1.240,00",""
+"02/07/2026","Pagamento de Boleto","FORNECEDOR TESTE","22222222222222","100,50","Saída"
+"03/07/2026","Tarifa","MANUTENÇÃO DE CONTA","33333333333333","-9,95","Saída"
+"31/07/2026","S A L D O","","","1.129,55",""

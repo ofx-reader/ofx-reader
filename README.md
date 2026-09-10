@@ -1,11 +1,11 @@
-# OFX/OFC Reader
-Read the OFX (Open Financial Exchange) and OFC (Open Financial Connectivity) file formats.
+# OFX/OFC/CSV Reader
+Read OFX (Open Financial Exchange), OFC (Open Financial Connectivity), and CSV bank statement files.
 
 
 About
 -------
 
-   * Importing the OFX/OFC file allows you to save time in financial management. Instead of typing or throwing each drive manually, you download the current account statement or savings in this file format.
+   * Importing OFX, OFC, or CSV files allows you to save time in financial management. Instead of typing each transaction manually, you import the statement downloaded from the bank.
 
    * OFX/OFC file format is widely used in Internet Banking of the leading financial institutions in the world.
 
@@ -22,6 +22,17 @@ $ boss install github.com/leogregianin/ofx-reader
  
 Example
 -------
+
+`TOFXReader.Import` detects CSV files by their `.csv` extension, so consumers use the same reader API for every supported format:
+
+```pascal
+Reader.OFXFile := 'statement.csv';
+if Reader.Import then
+  for I := 0 to Reader.Count - 1 do
+    ProcessTransaction(Reader.Get(I));
+```
+
+CSV parsing is implemented in the separate `src/uExtratoCsvReader.pas` unit and exposed through `TOFXReader`. It supports quoted fields, comma/semicolon/tab delimiters, UTF-8, UTF-16 and Windows-1252 text, Brazilian and international numeric formats, and common bank-statement column names. CSV support currently targets Delphi builds; OFX/OFC support remains available to Lazarus/FPC consumers.
 
 Simple result:
 
