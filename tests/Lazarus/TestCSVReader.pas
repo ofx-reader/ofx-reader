@@ -37,7 +37,7 @@ end;
 
 procedure TTestCSVReader.ImportCSVFile;
 begin
-  FOFXReader.OFXFile := '..\fixtures\csv\banco-brasil.csv';
+  FOFXReader.OFXFile := ExpandFileName('../fixtures/csv/banco-brasil.csv');
   FOFXReader.Import;
 end;
 

@@ -34,7 +34,7 @@ implementation
 procedure TTestOFXReader.SetUp;
 begin
   FOFXReader := TOFXReader.Create(nil);
-  FOFXReader.ofxFile := '..\fixtures\ofx\extrato.ofx';
+  FOFXReader.ofxFile := ExpandFileName('../fixtures/ofx/extrato.ofx');
   CheckTrue(FOFXReader.Import, 'Import should succeed for extrato.ofx');
 end;
 
@@ -77,7 +77,7 @@ end;
 procedure TTestOFXReader.TestMov0;
 begin
   CheckEquals('OTHER', FOFXReader.Get(0).MovType);
-  CheckEquals('01/06/2016', DateToStr(FOFXReader.Get(0).MovDate));
+  CheckEquals(Double(EncodeDate(2016, 6, 1)), Double(FOFXReader.Get(0).MovDate), 0.0);
   CheckEquals('-10.00', FOFXReader.Get(0).Value);
   CheckEquals('2016060111650', FOFXReader.Get(0).ID);
   CheckEquals('000391100701', FOFXReader.Get(0).Document);
@@ -87,7 +87,7 @@ end;
 procedure TTestOFXReader.TestMov1;
 begin
   CheckEquals('OTHER', FOFXReader.Get(1).MovType);
-  CheckEquals('02/06/2016', DateToStr(FOFXReader.Get(1).MovDate));
+  CheckEquals(Double(EncodeDate(2016, 6, 2)), Double(FOFXReader.Get(1).MovDate), 0.0);
   CheckEquals('880.00', FOFXReader.Get(1).Value);
   CheckEquals('2016060202176000', FOFXReader.Get(1).ID);
   CheckEquals('000000121482', FOFXReader.Get(1).Document);
@@ -97,7 +97,7 @@ end;
 procedure TTestOFXReader.TestMov4;
 begin
   CheckEquals('OTHER', FOFXReader.Get(4).MovType);
-  CheckEquals('03/06/2016', DateToStr(FOFXReader.Get(4).MovDate));
+  CheckEquals(Double(EncodeDate(2016, 6, 3)), Double(FOFXReader.Get(4).MovDate), 0.0);
   CheckEquals('-200.00', FOFXReader.Get(4).Value);
   CheckEquals('20160603149980', FOFXReader.Get(4).ID);
   CheckEquals('000000141658', FOFXReader.Get(4).Document);

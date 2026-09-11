@@ -8,6 +8,10 @@
 
 unit ofxreader;
 
+{$IFDEF FPC}
+{$mode objfpc}{$H+}
+{$ENDIF}
+
 interface
 
 uses
