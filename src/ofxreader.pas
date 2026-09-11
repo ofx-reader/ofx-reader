@@ -335,7 +335,10 @@ begin
     begin
       Transacao := CSVReader[I];
       Item := Add;
-      Item.MovType := Transacao.Tipo;
+if Transacao.Tipo = 'DEBIT' then
+        Item.MovType := 'D'
+      else
+        Item.MovType := 'C';
       Item.MovDate := Transacao.Data;
       Item.Value := CurrToStr(Transacao.Valor, TFormatSettings.Invariant);
       Item.ID := Transacao.Documento;
