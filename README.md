@@ -52,7 +52,20 @@ JSON result:
 Unittest
 -------
 
-![dunit](tests/tests.png)
+The Delphi tests (`tests/Delphi`) require [DUnitX](https://github.com/VSoftTechnologies/DUnitX), bundled with Delphi since 10 Seattle. Open `tests/Delphi/ofxreadertest.dproj`, or compile it with `dcc32`/`dcc64`, and run the resulting executable.
+
+```
+DUnitX - [ofxreadertest.exe] - Starting Tests.
+
+............................................................................
+
+Tests Found   : 38
+Tests Ignored : 0
+Tests Passed  : 38
+Tests Leaked  : 0
+Tests Failed  : 0
+Tests Errored : 0
+```
 
 
 Collaboration

@@ -32,16 +32,31 @@
         <PackageName Value="FCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="2">
+    <Units Count="5">
       <Unit0>
         <Filename Value="fpcunitproject1.lpr"/>
         <IsPartOfProject Value="True"/>
       </Unit0>
       <Unit1>
-        <Filename Value="testcase1.pas"/>
+        <Filename Value="TestOFXReader.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="TestCase1"/>
+        <UnitName Value="TestOFXReader"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="TestOFCReader.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="TestOFCReader"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="TestCSVReader.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="TestCSVReader"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="TestOFXReaderUtils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="TestOFXReaderUtils"/>
+      </Unit4>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
