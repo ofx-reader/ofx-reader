@@ -1,4 +1,4 @@
-//
+﻿//
 // OFX - Open Financial Exchange
 // OFC - Open Financial Connectivity
 
@@ -24,6 +24,7 @@ type
     Document: string;
     Description: string;
     Name: string;
+    SourceKey: string;
   end;
 
   TOFXReader = class(TComponent)
@@ -45,7 +46,9 @@ type
     FOFXFile: string;
     FOFXContent: string;
     FListItems: TList;
+    function ImportCSV: Boolean;
     procedure Clear;
+    procedure Reset;
     procedure Delete(iIndex: integer);
     function Add: TOFXItem;
     function InfLine(sLine: string): string;
@@ -61,6 +64,11 @@ type
 procedure Register;
 
 implementation
+
+{$IFNDEF FPC}
+uses
+  uExtratoCsvReader;
+{$ENDIF}
 
 constructor TOFXReader.Create(AOwner: TComponent);
 begin
@@ -86,6 +94,18 @@ begin
   while FListItems.Count > 0 do
     Delete(0);
   FListItems.Clear;
+end;
+
+procedure TOFXReader.Reset;
+begin
+  Clear;
+  BankID := '';
+  BranchID := '';
+  AccountID := '';
+  AccountType := '';
+  DateStart := '';
+  DateEnd := '';
+  FinalBalance := '';
 end;
 
 function TOFXReader.ConvertDate(DataStr: string): TDateTime;
@@ -138,13 +158,14 @@ var
   oItem: TOFXItem;
   sLine: string;
 begin
-  Clear;
-  DateStart := '';
-  DateEnd := '';
+  Reset;
   bOFX := false;
 
   if (FOFXContent = '') and (not FileExists(FOFXFile)) then
     raise Exception.Create('File not found!');
+
+  if (FOFXContent = '') and SameText(ExtractFileExt(FOFXFile), '.csv') then
+    Exit(ImportCSV);
 
   oFile := TStringList.Create;
   try
@@ -291,6 +312,48 @@ begin
     oFile.Free;
   end;
 end;
+
+function TOFXReader.ImportCSV: Boolean;
+{$IFDEF FPC}
+begin
+  raise Exception.Create('CSV import is not available in Lazarus/FPC builds.');
+end;
+{$ELSE}
+var
+  CSVReader: TExtratoCsvReader;
+  I: Integer;
+  Item: TOFXItem;
+  Transacao: TExtratoCsvTransacao;
+begin
+  CSVReader := TExtratoCsvReader.Create;
+  try
+    CSVReader.CarregarArquivo(FOFXFile);
+    DateStart := DateToStr(CSVReader.DataInicial);
+    DateEnd := DateToStr(CSVReader.DataFinal);
+
+    for I := 0 to CSVReader.Count - 1 do
+    begin
+      Transacao := CSVReader[I];
+      Item := Add;
+if Transacao.Tipo = 'DEBIT' then
+        Item.MovType := 'D'
+      else
+        Item.MovType := 'C';
+      Item.MovDate := Transacao.Data;
+      Item.Value := CurrToStr(Transacao.Valor, TFormatSettings.Invariant);
+      Item.ID := Transacao.Documento;
+      Item.RefNum := Transacao.Documento;
+      Item.Document := Transacao.Documento;
+      Item.Description := Transacao.Descricao;
+      Item.SourceKey := 'CSV|' + Transacao.ChaveOrigem;
+    end;
+
+    Result := Count > 0;
+  finally
+    CSVReader.Free;
+  end;
+end;
+{$ENDIF}
 
 function TOFXReader.InfLine(sLine: string): string;
 var

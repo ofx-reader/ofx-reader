@@ -1,7 +1,7 @@
 {
 	"name": "ofx-reader",
-	"description": "OFX (Open Financial Exchange) file formats library",
-	"version": "1.0.0",
+	"description": "OFX, OFC and CSV bank statement formats library",
+	"version": "1.1.0",
 	"homepage": "https://github.com/leogregianin/ofx-reader",
 	"mainsrc": "./",
 	"projects": [],
