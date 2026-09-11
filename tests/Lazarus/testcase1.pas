@@ -25,7 +25,7 @@ var
    ReturnValue: Boolean;
 begin
     FOFXReader := TOFXReader.Create(nil);
-    FOFXReader.ofxFile := '..\..\ofx-files\extrato.ofx';
+    FOFXReader.ofxFile := ExpandFileName('../../ofx-files/extrato.ofx');
     ReturnValue := FOFXReader.Import;
     CheckTrue(ReturnValue);
 end;
@@ -44,4 +44,3 @@ end;
 initialization
   RegisterTest('TTestCase1.TestImport', TTestCase1.Suite);
 end.
-
