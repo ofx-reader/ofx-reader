@@ -8,6 +8,10 @@
 
 unit ofxreader;
 
+{$IFDEF FPC}
+{$mode objfpc}{$H+}
+{$ENDIF}
+
 interface
 
 uses
@@ -113,7 +117,11 @@ var
   FS: TFormatSettings;
 begin
 
+  {$IFDEF FPC}
+  FS := DefaultFormatSettings;
+  {$ELSE}
   FS := TFormatSettings.Create('pt-BR');
+  {$ENDIF}
   try
     FS.ShortDateFormat := 'ddmmyyyy';
     Result := StrToDate(Copy(DataStr, 1, 8), FS);
