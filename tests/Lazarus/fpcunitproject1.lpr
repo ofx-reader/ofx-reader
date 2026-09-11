@@ -5,7 +5,10 @@ program fpcunitproject1;
 uses
   Classes,
   consoletestrunner,
-  TestCase1,
+  TestOFXReader,
+  TestOFCReader,
+  TestCSVReader,
+  TestOFXReaderUtils,
   ofxreader in '..\..\src\ofxreader.pas';
 
 type

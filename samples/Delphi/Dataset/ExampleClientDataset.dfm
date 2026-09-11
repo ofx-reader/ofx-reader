@@ -26,7 +26,7 @@ object Form1: TForm1
     EditLabel.Height = 13
     EditLabel.Caption = 'Path'
     TabOrder = 0
-    Text = '..\..\..\ofx-files\BancodoBrasil.ofx'
+    Text = '..\..\..\tests\fixtures\ofx\BancodoBrasil.ofx'
   end
   object Button1: TButton
     Left = 375

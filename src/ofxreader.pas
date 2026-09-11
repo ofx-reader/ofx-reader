@@ -42,6 +42,8 @@ type
     function Get(iIndex: integer): TOFXItem;
     function Count: integer;
     procedure FormatOFX(const InputFile, OutputFile: string);
+    function FindString(sSubString, sString: string): Boolean;
+    function ConvertDate(DataStr: string): TDateTime;
   private
     FOFXFile: string;
     FOFXContent: string;
@@ -52,8 +54,6 @@ type
     procedure Delete(iIndex: integer);
     function Add: TOFXItem;
     function InfLine(sLine: string): string;
-    function FindString(sSubString, sString: string): Boolean;
-    function ConvertDate(DataStr: string): TDateTime;
   protected
     function GetBetween(Str, StrStart, StrEnd: string): string;
   published
@@ -110,17 +110,21 @@ end;
 
 function TOFXReader.ConvertDate(DataStr: string): TDateTime;
 var
-  FS: TFormatSettings;
+  Compact: string;
+  Day, Month, Year: Integer;
 begin
-
-  FS := TFormatSettings.Create('pt-BR');
-  try
-    FS.ShortDateFormat := 'ddmmyyyy';
-    Result := StrToDate(Copy(DataStr, 1, 8), FS);
-  except
-    //on e: Exception do
-    //  raise Exception.Create('Erro ao converter a data: ' + DataStr + ' ' + e.Message);
-  end;
+  Result := 0;
+  Compact := Copy(DataStr, 1, 8);
+  if Length(Compact) <> 8 then
+    Exit;
+  if not TryStrToInt(Copy(Compact, 1, 2), Day) then
+    Exit;
+  if not TryStrToInt(Copy(Compact, 3, 2), Month) then
+    Exit;
+  if not TryStrToInt(Copy(Compact, 5, 4), Year) then
+    Exit;
+  if not TryEncodeDate(Year, Month, Day, Result) then
+    Result := 0;
 end;
 
 function TOFXReader.Count: integer;
@@ -385,7 +389,7 @@ end;
 
 function TOFXReader.FindString(sSubString, sString: string): Boolean;
 begin
-  Result := Pos(UpperCase(sSubString), UpperCase(sString)) > 0;
+  Result := (sSubString = '') or (Pos(UpperCase(sSubString), UpperCase(sString)) > 0);
 end;
 
 procedure TOFXReader.FormatOFX(const InputFile, OutputFile: string);

@@ -11,8 +11,12 @@ uses
   DUnitX.Loggers.Console,
   DUnitX.Loggers.Xml.NUnit,
   DUnitX.TestFramework,
-  testofxreader in 'testofxreader.pas',
-  ofxreader in '..\..\src\ofxreader.pas';
+  TestOFXReader in 'TestOFXReader.pas',
+  TestOFCReader in 'TestOFCReader.pas',
+  TestCSVReader in 'TestCSVReader.pas',
+  TestOFXReaderUtils in 'TestOFXReaderUtils.pas',
+  ofxreader in '..\..\src\ofxreader.pas',
+  uExtratoCsvReader in '..\..\src\uExtratoCsvReader.pas';
 
 var
   runner : ITestRunner;
